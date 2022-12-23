@@ -1,0 +1,1 @@
+Website created with react for my company selling custom jewelry

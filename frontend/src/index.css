@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-header {
+/*header {
   background-color: bisque;
   padding: 1rem;
   font-family: Gabriola;
@@ -19,9 +19,21 @@ header a {
   font-weight: bold;
   text-decoration: none;
 }
+ */
+
+.color_nav {
+  background-color: bisque;
+  padding: 1rem;
+  font-family: Gabriola;
+  font-size: 100px;
+}
+
+.site_container {
+  min-height: 100vh;
+}
 
 main{
-  padding: 1rem;
+  flex: 1;
 }
 .products {
   display: flex;

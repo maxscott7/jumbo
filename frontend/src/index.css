@@ -28,12 +28,21 @@ header a {
   font-size: 100px;
 }
 
-.site_container {
+.site-container {
   min-height: 100vh;
+}
+
+.rating span {
+  color: gold;
 }
 
 main{
   flex: 1;
+}
+
+.btn-primary {
+  background-color: bisque;
+  color: whitesmoke;
 }
 .products {
   display: flex;

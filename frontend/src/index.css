@@ -35,10 +35,19 @@ header a {
 main{
   flex: 1;
 }
+
+.btn-primary{
+  background-color: bisque;
+  color: black;
+}
 .products {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.rating span {
+  color: gold;
 }
 
 .product {

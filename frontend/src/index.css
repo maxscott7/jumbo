@@ -67,3 +67,7 @@ main{
 .product button {
 
 }
+
+.img-large {
+  max-width: 100%;
+}

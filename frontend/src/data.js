@@ -17,7 +17,7 @@ const data = {
             category: 'Chains',
             image: '/images/chains/chain.jpg',
             price: 55,
-            countInStock: 10,
+            countInStock: 15,
             rating: 4.0,
             numReviews: 12,
             description: 'silver chain'

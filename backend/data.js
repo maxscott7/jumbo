@@ -1,6 +1,7 @@
 const data = {
     products: [
         {
+            _id:"1",
             name: 'Ring',
             slug: 'ring',
             category: 'Rings',
@@ -12,6 +13,7 @@ const data = {
             description: 'silver ring'
         },
         {
+            _id:"2",
             name: 'Chain',
             slug: 'chain',
             category: 'Chains',
@@ -23,6 +25,7 @@ const data = {
             description: 'silver chain'
         },
         {
+            _id:"3",
             name: 'Bracelet',
             slug: 'bracelet',
             category: 'Bracelets',
@@ -34,6 +37,7 @@ const data = {
             description: 'silver bracelet'
         },
         {
+            _id:"4",
             name: 'Earring',
             slug: 'earring',
             category: 'Earrings',

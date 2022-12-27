@@ -1,5 +1,5 @@
 //import data from "../data";
-import {useEffect, useReducer} from "react";
+import {useContext, useEffect, useReducer} from "react";
 import axios from 'axios';
 import logger from "use-reducer-logger";
 import {Col, Row} from "react-bootstrap";
@@ -7,6 +7,7 @@ import Product from "../components/Product";
 import {Helmet} from "react-helmet-async";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
+import {Store} from "../Store";
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -39,6 +40,8 @@ function HomeScreen() {
         };
         fetchData();
     }, []);
+
+
     return <div>
         <Helmet><title>Jumbo Jewelry</title></Helmet>
         <h1>Featured Products</h1>

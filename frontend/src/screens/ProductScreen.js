@@ -1,5 +1,5 @@
 import {useParams} from "react-router-dom";
-import {useEffect, useReducer} from "react";
+import {useContext, useEffect, useReducer} from "react";
 import axios from "axios";
 import {Badge, Button, Card, Col, ListGroup, Row} from "react-bootstrap";
 import Rating from "../components/Rating";
@@ -7,6 +7,7 @@ import {Helmet} from "react-helmet-async";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
 import {getError} from "../utils";
+import {Store} from "../Store";
 
 const reducer = (state, action) => {
     switch (action.type) {
@@ -41,6 +42,21 @@ function ProductScreen() {
         fetchData();
     }, [slug]);
 
+    const {state, dispatch: cxtDispatch} = useContext(Store);
+    const{cart} = state;
+
+    const addToCartHandler = async() => {
+        //checks if item is already in cart may want to remove later
+        const existItem = cart.cartItems.find((x) => x._id === product._id);
+        const quantity = existItem ? existItem.quantity + 1 : 1;
+        const {data} = await axios.get(`/api/products/${product._id}`);
+        if (data.countInStock < quantity) {
+            window.alert('Sorry. Product is out of stock');
+            return;
+        }
+        cxtDispatch({type:'CART_ADD_ITEM', payload: {...product, quantity},
+        });
+    };
     return (
         loading ? (<LoadingBox/>) :
             error ? (<MessageBox variant="danger">{error}</MessageBox>)
@@ -97,11 +113,10 @@ function ProductScreen() {
                                             </Col>
                                         </Row>
                                     </ListGroup.Item>
-
                                     {product.countInStock > 0 && (
                                         <ListGroup.Item>
                                             <div className='d-grid'>
-                                                <Button variant='primary'>
+                                                <Button onClick={addToCartHandler} variant='primary'>
                                                     Add to Cart
                                                 </Button>
                                             </div>

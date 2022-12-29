@@ -27,6 +27,9 @@ header a {
   font-family: Gabriola;
   font-size: 100px;
 }
+.img-thumbnail {
+  height: 80px;
+}
 
 .site_container {
   min-height: 100vh;
